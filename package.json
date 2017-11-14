@@ -1,0 +1,32 @@
+{
+  "name": "fuzzytimeinput",
+  "version": "1.0.0",
+  "description": "A small, no-dependency package for normalizing time (hours, minutes, second) inputs from users.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdoleary/fuzzyTimeInput.git"
+  },
+  "keywords": [
+    "time",
+    "input",
+    "user",
+    "fuzzy",
+    "match",
+    "normalize",
+    "date",
+    "datetime"
+  ],
+  "author": "Jordan O'Leary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdoleary/fuzzyTimeInput/issues"
+  },
+  "homepage": "https://github.com/jdoleary/fuzzyTimeInput#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
