@@ -16,6 +16,9 @@ describe('Simple Input Time Matching', function() {
     assert.equal(fuzz('3:30pm'), '15:30');
     assert.equal(fuzz('3:30am'), '3:30');
   });
+  it('military time works', function() {
+    assert.equal(fuzz('15:00'), '15:00');
+  });
   it('invalid times return null', function() {
     assert.equal(fuzz('24:30pm'), null);
   });
