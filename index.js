@@ -15,9 +15,9 @@ function fuzzyTimeInput(input, returnType){
   }
   var am = true;
   // determine am or pm
-  if(input.indexOf('a') != -1){
+  if(input.indexOf('a') != -1 || input.indexOf('A') != -1){
     am = true;
-  }else if(input.indexOf('p') != -1){
+  }else if(input.indexOf('p') != -1 || input.indexOf('P') != -1){
     am = false;
   }
     
@@ -51,6 +51,10 @@ function returnWithType(val,type){
       return val;
     break;
     case 'string':
+      val.minutes = parseInt(val.minutes);
+      if(val.minutes < 10){
+          val.minutes = '0' + val.minutes;
+      }
       return val.hours + ':' + val.minutes;
     break;
   }
