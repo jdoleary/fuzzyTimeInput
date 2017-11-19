@@ -34,4 +34,14 @@ describe('Simple Input Time Matching', function() {
     assert.equal(fuzz(''),null);
     assert.equal(fuzz(null),null);
   });
+  it('only hours', function() {
+    assert.equal(fuzz('7p'),'19:00');
+    assert.equal(fuzz('7a'),'7:00');
+    assert.equal(fuzz('7'),'7:00');
+  });
+  it('only minutes', function() {
+    assert.equal(fuzz('30'),'0:30');
+    assert.equal(fuzz('10m'),'0:10');
+    assert.equal(fuzz('10'),'10:00');
+  });
 });
