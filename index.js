@@ -7,6 +7,9 @@ supported input types
 */
 
 function fuzzyTimeInput(input, returnType){
+  if(!input || input.length == 0){
+    return null;
+  }
   if(!returnType){
     returnType = 'string';
   }

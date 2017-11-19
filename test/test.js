@@ -22,4 +22,8 @@ describe('Simple Input Time Matching', function() {
   it('decimals', function() {
     assert.equal(fuzz('4.4'), '4:24');
   });
+  it('errors', function() {
+    assert.equal(fuzz(''),null);
+    assert.equal(fuzz(null),null);
+  });
 });
