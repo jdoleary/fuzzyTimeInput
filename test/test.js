@@ -44,4 +44,10 @@ describe('Simple Input Time Matching', function() {
     assert.equal(fuzz('10m'),'0:10');
     assert.equal(fuzz('10'),'10:00');
   });
+  it('weird entries', function() {
+    assert.equal(fuzz('15:00p'),'15:00');
+    assert.equal(fuzz('15:'),'15:00');
+    assert.equal(fuzz(':15'),'0:15');
+    
+  });
 });

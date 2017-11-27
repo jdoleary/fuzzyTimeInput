@@ -7,6 +7,7 @@ supported input types
 */
 
 function fuzzyTimeInput(input, returnType){
+  debugger;
   if(!input || input.length == 0){
     return null;
   }
@@ -25,12 +26,12 @@ function fuzzyTimeInput(input, returnType){
   var val = {hours:0,minutes:0};
   if(input.indexOf(':') != -1){
     var split = input.split(':');
-    val.hours = parseInt(split[0]);
+    val.hours = parseInt(split[0]) || 0;
     // if in the PM add 12 hours
-    if(isPM){
+    if(isPM && val.hours <= 12){
       val.hours += 12;
     }
-    val.minutes = parseInt(split[1]);
+    val.minutes = parseInt(split[1]) || 0;
     return returnWithType(val,returnType);
   }
   if(input.indexOf('.') != -1){
@@ -51,9 +52,8 @@ function fuzzyTimeInput(input, returnType){
   }else{
     return returnWithType({hours:0,minutes:num},returnType);
   }  
-  
-  
 }
+
 function returnWithType(val,type){
   if(val.hours >= 24 || val.minutes >= 60){
     return null;
