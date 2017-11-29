@@ -7,7 +7,6 @@ supported input types
 */
 
 function fuzzyTimeInput(input, returnType){
-  debugger;
   if(!input || input.length == 0){
     return null;
   }
@@ -58,7 +57,7 @@ function returnWithType(val,type){
   if(val.hours >= 24 || val.minutes >= 60){
     return null;
   }
-  switch(type){
+  switch(type.toLowerCase()){
     case 'json':
       return val;
     break;

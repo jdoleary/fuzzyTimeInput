@@ -48,6 +48,14 @@ describe('Simple Input Time Matching', function() {
     assert.equal(fuzz('15:00p'),'15:00');
     assert.equal(fuzz('15:'),'15:00');
     assert.equal(fuzz(':15'),'0:15');
+    assert.equal(fuzz('03:15p'),'15:15');
+  });
+  
+  it('return type', function() {
+    assert.equal(fuzz('3:12',),'3:12');
+    assert.equal(fuzz('3:12','string'),'3:12');
+    assert.equal(fuzz('3:12','json').hours,3);
+    assert.equal(fuzz('3:12','json').minutes,12);
     
   });
 });
