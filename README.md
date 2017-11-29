@@ -1,4 +1,5 @@
 # fuzzyTimeInput
+[![Build Status](https://travis-ci.org/jdoleary/fuzzyTimeInput.svg?branch=master)](https://travis-ci.org/jdoleary/fuzzyTimeInput)
 Normalize inconsistent time strings ("3pm","3:00p","15:00","3PM") to a consistant format.
 This small, no-dependency package supports a large variety of time entry formats (see the Unit Tests) and outputs military time (default) or JSON.
 
