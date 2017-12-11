@@ -1,6 +1,6 @@
 {
   "name": "fuzzytimeinput",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A small, no-dependency package for normalizing time (hours, minutes, second) inputs from users.",
   "main": "index.js",
   "scripts": {
