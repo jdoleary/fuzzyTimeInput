@@ -41,6 +41,7 @@ function fuzzyTimeInput(input, returnType){
     return returnWithType(val,returnType);
   }
   var num = parseInt(input);
+  debugger;
   if(num<=12 && input.indexOf('m') == -1 && input.indexOf('M') == -1){
     if(isPM){
       return returnWithType({hours:num+12,minutes:0},returnType);
@@ -49,6 +50,28 @@ function fuzzyTimeInput(input, returnType){
       return returnWithType({hours:num,minutes:0},returnType);
     }
   }else{
+    // 1512 == 15:12 format
+    if((''+num).length == 4){
+      val.hours = Math.floor(num/100);
+      val.minutes = num%100;
+      // if in the PM add 12 hours
+      if(isPM && val.hours <= 12){
+        val.hours += 12;
+      }
+      return returnWithType(val,returnType);
+    }
+    // 310 == 3:10 or 310p == 15:10
+    if((''+num).length == 3){
+      val.hours = Math.floor(num/100);
+      val.minutes = num%100;
+      // if in the PM add 12 hours
+      if(isPM && val.hours <= 12){
+        val.hours += 12;
+      }
+      return returnWithType(val,returnType);
+    }
+
+    // otherwise, just minutes
     return returnWithType({hours:0,minutes:num},returnType);
   }  
 }

@@ -56,6 +56,12 @@ describe('Simple Input Time Matching', function() {
     assert.equal(fuzz('3:12','string'),'3:12');
     assert.equal(fuzz('3:12','json').hours,3);
     assert.equal(fuzz('3:12','json').minutes,12);
-    
+  });
+
+  it('four/three number format works', function() {
+    assert.equal(fuzz('1200',),'12:00');
+    assert.equal(fuzz('1513',),'15:13');
+    assert.equal(fuzz('300',),'3:00');
+    assert.equal(fuzz('312p',),'15:12');
   });
 });
