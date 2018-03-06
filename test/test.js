@@ -13,6 +13,7 @@ describe('Simple Input Time Matching', function() {
     assert.equal(fuzz('3:30'), '3:30');
   });
   it('am and pm work', function() {
+    assert.equal(fuzz('8pm'), '20:00');
     assert.equal(fuzz('3:30pm'), '15:30');
     assert.equal(fuzz('3:30am'), '3:30');
     assert.equal(fuzz('3:30PM'), '15:30');

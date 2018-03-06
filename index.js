@@ -41,8 +41,7 @@ function fuzzyTimeInput(input, returnType){
     return returnWithType(val,returnType);
   }
   var num = parseInt(input);
-  debugger;
-  if(num<=12 && input.indexOf('m') == -1 && input.indexOf('M') == -1){
+  if(num<=12 && ((input.indexOf('m') == -1 && input.indexOf('M') == -1) || isPM || isAM)){
     if(isPM){
       return returnWithType({hours:num+12,minutes:0},returnType);
     }else {
